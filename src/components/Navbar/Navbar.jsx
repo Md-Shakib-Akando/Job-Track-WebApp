@@ -9,13 +9,13 @@ const Navbar = () => {
 
     <NavLink
       to='/'
-      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+      className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
     >
       Home
     </NavLink>
     <NavLink
       to='/companies'
-      className="text-gray-600 hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+      className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
     >
       Companies
     </NavLink>
@@ -33,9 +33,9 @@ const Navbar = () => {
         <div className=" w-10/12 mx-auto py-5 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img className='h-16 w-16 rounded-xl' src={Logo} alt="" />
-            <h2 className='text-2xl md:text-4xl font-bold'>Job Track</h2>
+            <h2 className='text-2xl md:text-4xl font-bold'>JOB TRACK</h2>
           </div>
-          <nav className="flex items-center  space-x-12">
+          <nav className="flex items-center  space-x-4">
             <div className="hidden md:flex items-center space-x-8">
 
               {link}
