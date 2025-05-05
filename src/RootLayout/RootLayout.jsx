@@ -2,14 +2,15 @@ import React, { createContext, useEffect, useState } from 'react';
 import {  Outlet, useNavigate } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
 import app from '../firebase.config';
 import { toast, ToastContainer } from 'react-toastify';
-
+import { GoogleAuthProvider } from 'firebase/auth';
 
 export const valueContext=createContext();
 
 const RootLayout = () => {
+    const provider=new GoogleAuthProvider();
     const navigate=useNavigate();
     const auth=getAuth( app );
     const [user,setUser]=useState(null);
@@ -35,7 +36,18 @@ const RootLayout = () => {
             toast.error(error.message);
         })
     }
-    
+    const handleGoogleSignIn=()=>{
+        if(user) return toast.info("Already signed in");
+        signInWithPopup(auth,provider)
+        .then(result=>{
+            const user=result.user;
+            setUser(user);
+            toast.success("Google Sign-In Successful");
+            navigate('/');
+        }).catch(error=>{
+            toast.error(error.message)
+        })
+    }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -63,6 +75,7 @@ const RootLayout = () => {
         user,
         setUser,
         handleSignOut,
+        handleGoogleSignIn,
     }
     
     return (

@@ -2,8 +2,11 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { valueContext } from '../RootLayout/RootLayout';
+
+
 const Register = () => {
-    const {handleRegister}=useContext( valueContext )
+    
+    const {handleRegister,handleGoogleSignIn}=useContext( valueContext )
     const [error,setError]=useState();
     const handleSignUp=(e)=>{
         e.preventDefault();
@@ -31,6 +34,7 @@ const Register = () => {
         }
 
         handleRegister(email,password)
+       
     }
     return (
         <div className='pt-20 md:pt-20'>
@@ -100,6 +104,7 @@ const Register = () => {
                 <div className='flex justify-center'>
                     <NavLink>
                         <button
+                            onClick={handleGoogleSignIn}
                             aria-label="Register with Google"
                             type="button"
                             className="btn flex items-center gap-2 w-full justify-center p-3 rounded-md"

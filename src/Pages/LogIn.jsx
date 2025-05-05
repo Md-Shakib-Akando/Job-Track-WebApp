@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { Link, NavLink } from 'react-router';
 import { valueContext } from '../RootLayout/RootLayout';
 const LogIn = () => {
-    const {handleLogin}=useContext(valueContext);
+    const {handleLogin,handleGoogleSignIn}=useContext(valueContext);
     const handleSignIn=(e)=>{
         e.preventDefault();
         const email=e.target.email.value
@@ -52,21 +52,16 @@ const LogIn = () => {
                     <div className="flex-1 h-px bg-gray-300"></div>
                 </div>
 
-                <div className='flex flex-col md:flex-row gap-4 justify-center items-center'>
+                <div className='flex justify-center items-center'>
                     <NavLink>
 
-                        <button aria-label="Login with Google" type="button" className="btn flex items-center justify-center w-full p-3  rounded-md focus:ring-2 focus:ring-offset-1">
+                        <button onClick={handleGoogleSignIn} aria-label="Login with Google" type="button" className="btn flex items-center justify-center w-full p-3  rounded-md focus:ring-2 focus:ring-offset-1">
                         <FcGoogle size={32} />
                             <p>Login with Google</p>
                         </button>
 
                     </NavLink>
-                    <NavLink>
-                    <button aria-label="Login with Google" type="button" className="btn   flex  w-full items-center justify-center p-3  rounded-md ">
-                    <FaGithub size={32} />
-                            <p>Login with Google</p>
-                        </button>
-                    </NavLink>
+                    
 
                 </div>
 
