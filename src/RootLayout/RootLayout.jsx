@@ -8,7 +8,7 @@ const RootLayout = () => {
     return (
         <>
             <Navbar></Navbar>
-            <div className='w-10/12 mx-auto h-[calc(100vh-330px)]'>
+            <div className='w-10/12 mx-auto min-h-screen'>
             <Outlet></Outlet>
             </div>
             <Footer></Footer>

@@ -7,6 +7,8 @@ import {
 import RootLayout from "../RootLayout/RootLayout";
 import Home from "../Pages/Home";
 import Companies from "../Pages/Companies";
+import LogIn from "../Pages/LogIn";
+import Register from "../Pages/Register";
  
   
  export const router = createBrowserRouter([
@@ -17,6 +19,12 @@ import Companies from "../Pages/Companies";
         {index:true, Component:Home,},
         {
             path:"/companies", Component:Companies,
+        },
+        {
+          path:'/login', Component:LogIn,
+        },
+        {
+          path:'/register', Component:Register,
         }
       ]
     },
