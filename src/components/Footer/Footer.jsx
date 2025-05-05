@@ -26,6 +26,12 @@ const Footer = () => {
                     >
                         Companies
                     </NavLink>
+                    <NavLink
+                        to='/profile'
+                        className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+                    >
+                        My Profile
+                    </NavLink>
                 </nav>
 
                 <aside>

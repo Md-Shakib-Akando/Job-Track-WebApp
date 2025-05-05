@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Link, NavLink } from 'react-router';
 import { valueContext } from '../RootLayout/RootLayout';
 const LogIn = () => {
-    const {handleLogin,handleGoogleSignIn}=useContext(valueContext);
+    const {handleLogin,handleGoogleSignIn,handleForgetPass}=useContext(valueContext);
+    const emailRef=useRef();
     const handleSignIn=(e)=>{
         e.preventDefault();
         const email=e.target.email.value
         const password=e.target.password.value
         handleLogin(email,password)
+        
     }
     return (
         <div className='pt-20 md:pt-40'>
@@ -24,6 +26,7 @@ const LogIn = () => {
                             id="email"
                             placeholder="email"
                             required
+                            ref={emailRef}
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
@@ -38,7 +41,7 @@ const LogIn = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                         <div className="flex justify-end text-xs text-blue-600">
-                            <a href="#" className="hover:underline">Forgot Password?</a>
+                            <Link onClick={()=>handleForgetPass(emailRef.current.value)} className="hover:underline">Forgot Password?</Link>
                         </div>
                     </div>
                     <button type='submit' className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">

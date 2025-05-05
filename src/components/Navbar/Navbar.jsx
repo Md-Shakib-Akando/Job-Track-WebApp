@@ -53,14 +53,22 @@ const Navbar = () => {
             </div>
             <div className='flex gap-4'>
               {
-                user?<NavLink to='/profile'><CgProfile size={32} /></NavLink>:<>
-                <NavLink to='/login'>
+                user?(<NavLink to='/profile'>{
+                  user.photoURL?<img
+                  src={user.photoURL}
+                  alt="Profile"
+                  className="w-10 h-10 rounded-full border-2 border-blue-500"
+                />:<CgProfile size={32} />
+                }</NavLink>):(<>
+               <div className='hidden md:flex gap-4 '>
+               <NavLink to='/login'>
               <button className="btn btn-soft btn-primary">SignIn</button>
               </NavLink>
               <NavLink to='/register'>
               <button className="btn btn-soft btn-primary">SignUp</button>
               </NavLink>
-                </>
+               </div>
+                </>)
               }
             </div>
 
@@ -73,8 +81,15 @@ const Navbar = () => {
                 menu&&(
                   <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 top-10 mt-3 w-28  p-2 shadow">
+                className="menu menu-sm text-center dropdown-content bg-base-100 rounded-box z-1 top-10 mt-3 w-44 -right-8  p-2 shadow">
                 {link}
+                <NavLink to='/login'>
+              <button className="btn btn-soft btn-primary my-3">SignIn</button>
+              </NavLink>
+              <NavLink to='/register'>
+              <button className="btn btn-soft btn-primary">SignUp</button>
+              </NavLink>
+               
               </ul>
                 )
               }

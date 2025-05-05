@@ -2,7 +2,7 @@ import React, { createContext, useEffect, useState } from 'react';
 import {  Outlet, useNavigate } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut} from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from "firebase/auth";
 import app from '../firebase.config';
 import { toast, ToastContainer } from 'react-toastify';
 import { GoogleAuthProvider } from 'firebase/auth';
@@ -14,13 +14,18 @@ const RootLayout = () => {
     const navigate=useNavigate();
     const auth=getAuth( app );
     const [user,setUser]=useState(null);
-    const handleRegister=(email,password)=>{
+    const handleRegister=(email,password,name ,photo)=>{
         createUserWithEmailAndPassword(auth,email,password)
         .then(result=>{
-            const user=result.user;
-            setUser(user);
-            toast.success("signUp Successfully Done")
-            navigate('/')
+            updateProfile(result.user,{displayName:name,photoURL:photo})
+            .then(() => {
+                setUser({ ...result.user, displayName: name, photoURL: photo });
+                toast.success("Sign Up Successfully Done");
+                navigate('/');
+            })
+            .catch(error => {
+                toast.error(error.message);
+            });
         }).catch(error=>{
             toast.error(error.message);
         })
@@ -49,6 +54,8 @@ const RootLayout = () => {
         })
     }
 
+    
+
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -57,6 +64,15 @@ const RootLayout = () => {
             unSubscribe();
         };
     }, [auth]);
+
+    const handleForgetPass=(email)=>{
+        sendPasswordResetEmail(auth,email)
+        .then(()=>{
+            toast.info("Check Your Mailbox")
+        }).catch(error=>{
+            toast.error(error.message)
+        })
+    }
 
     const handleSignOut=()=>{
         signOut(auth).then(result=>{
@@ -76,13 +92,15 @@ const RootLayout = () => {
         setUser,
         handleSignOut,
         handleGoogleSignIn,
+        handleForgetPass,
+        
     }
     
     return (
         <>
             <valueContext.Provider value={data}>
             <Navbar></Navbar>
-            <div className='w-10/12 mx-auto min-h-screen'>
+            <div className='w-10/12 mx-auto min-h-screen-[calc(100vh-330px)]'>
             <Outlet></Outlet>
             </div>
             </valueContext.Provider>

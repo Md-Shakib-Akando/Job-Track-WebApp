@@ -33,7 +33,7 @@ const Register = () => {
             return;
         }
 
-        handleRegister(email,password)
+        handleRegister(email,password,name,photo)
        
     }
     return (
