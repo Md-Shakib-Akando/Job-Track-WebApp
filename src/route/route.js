@@ -6,10 +6,10 @@ import {
   
 import RootLayout from "../RootLayout/RootLayout";
 import Home from "../Pages/Home";
-import Companies from "../Pages/Companies";
 import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
 import Profile from "../Pages/Profile";
+import CompanyDetails from "../Pages/CompanyDetails";
  
   
  export const router = createBrowserRouter([
@@ -17,9 +17,14 @@ import Profile from "../Pages/Profile";
       path: "/",
       Component: RootLayout,
       children:[
-        {index:true, Component:Home,},
+        {index:true,
+        Component:Home,
+        loader:()=>fetch('/Companies.json')
+        },
         {
-            path:"/companies", Component:Companies,
+            path:"/companyDetails/:id",
+            Component:CompanyDetails,
+            loader:()=>fetch('/Companies.json')
         },
         {
           path:'/login', Component:LogIn,

@@ -1,0 +1,441 @@
+[
+    {
+      "id": "1",
+      "name": "Google",
+      "logo": "https://logo.clearbit.com/google.com",
+      "location": "Mountain View, CA",
+      "website": "https://www.google.com",
+      "industry": "Technology",
+      "companySize": "200,000+ employees",
+      "about": "Google specializes in internet-related services and products, including search, advertising, cloud computing, software, and hardware.",
+      "jobs": [
+        {
+          "id": "google-001",
+          "title": "Software Engineer",
+          "bannerImage": "https://example.com/banners/google-software.png",
+          "location": "Mountain View, CA",
+          "salary": "$120,000 - $160,000",
+          "jobType": "Full-time",
+          "description": "Build scalable systems for billions of users.",
+          "requirements": [
+            "Proficient in C++, Java, or Python",
+            "Experience with large-scale distributed systems",
+            "Excellent coding and problem-solving skills"
+          ]
+        },
+        {
+          "id": "google-002",
+          "title": "Product Manager",
+          "bannerImage": "https://example.com/banners/google-pm.png",
+          "location": "Remote",
+          "salary": "$130,000 - $170,000",
+          "jobType": "Full-time",
+          "description": "Define product strategy and drive execution.",
+          "requirements": [
+            "3+ years in product management",
+            "Strong leadership and communication skills",
+            "Experience with agile development"
+          ]
+        },
+        {
+          "id": "google-003",
+          "title": "UX Designer",
+          "bannerImage": "https://example.com/banners/google-ux.png",
+          "location": "Mountain View, CA",
+          "salary": "$100,000 - $135,000",
+          "jobType": "Full-time",
+          "description": "Design clean, user-centered experiences.",
+          "requirements": [
+            "Proficient in Figma, Sketch, or Adobe XD",
+            "Strong portfolio with UX case studies",
+            "Collaborative and user-first mindset"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Microsoft",
+      "logo": "https://logo.clearbit.com/microsoft.com",
+      "location": "Redmond, WA",
+      "website": "https://www.microsoft.com",
+      "industry": "Software & Cloud",
+      "companySize": "160,000+ employees",
+      "about": "Microsoft develops and supports software, services, devices, and solutions that deliver new opportunities, greater convenience, and enhanced value.",
+      "jobs": [
+        {
+          "id": "msft-001",
+          "title": "Cloud Solutions Architect",
+          "bannerImage": "https://example.com/banners/msft-cloud.png",
+          "location": "Redmond, WA",
+          "salary": "$140,000 - $180,000",
+          "jobType": "Full-time",
+          "description": "Lead architecture design for Azure cloud.",
+          "requirements": [
+            "Experience with Azure and DevOps",
+            "Client consulting experience",
+            "Cloud certifications preferred"
+          ]
+        },
+        {
+          "id": "msft-002",
+          "title": "Security Analyst",
+          "bannerImage": "https://example.com/banners/msft-security.png",
+          "location": "Remote",
+          "salary": "$100,000 - $125,000",
+          "jobType": "Full-time",
+          "description": "Monitor and secure enterprise systems.",
+          "requirements": [
+            "Knowledge of cybersecurity principles",
+            "SIEM and threat intelligence tools",
+            "Incident response experience"
+          ]
+        },
+        {
+          "id": "msft-003",
+          "title": "Power BI Developer",
+          "bannerImage": "https://example.com/banners/msft-powerbi.png",
+          "location": "Redmond, WA",
+          "salary": "$95,000 - $115,000",
+          "jobType": "Full-time",
+          "description": "Develop interactive reports and dashboards.",
+          "requirements": [
+            "Proficiency in Power BI and DAX",
+            "Strong SQL and data modeling skills",
+            "Understanding of business KPIs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Apple",
+      "logo": "https://logo.clearbit.com/apple.com",
+      "location": "Cupertino, CA",
+      "website": "https://www.apple.com",
+      "industry": "Consumer Electronics",
+      "companySize": "1,500,000+ employees",
+      "about": "Apple designs and manufactures consumer electronics and software, known for iconic products like the iPhone, Mac, and Apple Watch.",
+
+      "jobs": [
+        {
+          "id": "apple-001",
+          "title": "iOS Developer",
+          "bannerImage": "https://example.com/banners/apple-ios.png",
+          "location": "Cupertino, CA",
+          "salary": "$115,000 - $145,000",
+          "jobType": "Full-time",
+          "description": "Create elegant and performant iOS apps.",
+          "requirements": [
+            "Strong Swift and Objective-C skills",
+            "Experience with UIKit and CoreData",
+            "Clean code and best practices"
+          ]
+        },
+        {
+          "id": "apple-002",
+          "title": "Hardware Engineer",
+          "bannerImage": "https://example.com/banners/apple-hardware.png",
+          "location": "Cupertino, CA",
+          "salary": "$125,000 - $155,000",
+          "jobType": "Full-time",
+          "description": "Design and prototype new Apple devices.",
+          "requirements": [
+            "Expertise in circuit design",
+            "Experience with embedded systems",
+            "Hardware testing and validation"
+          ]
+        },
+        {
+          "id": "apple-003",
+          "title": "Technical Writer",
+          "bannerImage": "https://example.com/banners/apple-docs.png",
+          "location": "Remote",
+          "salary": "$85,000 - $105,000",
+          "jobType": "Full-time",
+          "description": "Write developer documentation and manuals.",
+          "requirements": [
+            "Excellent writing and grammar skills",
+            "Experience with Markdown, Git, and docs tools",
+            "Understanding of Apple developer ecosystem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Amazon",
+      "logo": "https://logo.clearbit.com/amazon.com",
+      "location": "Seattle, WA",
+      "website": "https://www.amazon.com",
+      "industry": "E-commerce & Cloud",
+      "companySize": "1,500,000+ employees",
+      "about": "Amazon is a multinational technology company focusing on e-commerce, cloud computing, digital streaming, and artificial intelligence.",
+
+      "jobs": [
+        {
+          "id": "amz-001",
+          "title": "Machine Learning Engineer",
+          "bannerImage": "https://example.com/banners/amazon-ml.png",
+          "location": "Seattle, WA",
+          "salary": "$125,000 - $160,000",
+          "jobType": "Full-time",
+          "description": "Deploy ML models to power recommendations.",
+          "requirements": [
+            "Strong Python and ML libraries",
+            "Experience with AWS ML services",
+            "Good math and data skills"
+          ]
+        },
+        {
+          "id": "amz-002",
+          "title": "Warehouse Operations Manager",
+          "bannerImage": "https://example.com/banners/amazon-warehouse.png",
+          "location": "Dallas, TX",
+          "salary": "$90,000 - $115,000",
+          "jobType": "Full-time",
+          "description": "Manage logistics and operations for fulfillment centers.",
+          "requirements": [
+            "Leadership and team management",
+            "Warehouse or logistics experience",
+            "Strong organizational skills"
+          ]
+        },
+        {
+          "id": "amz-003",
+          "title": "Cloud Support Engineer",
+          "bannerImage": "https://example.com/banners/amazon-support.png",
+          "location": "Remote",
+          "salary": "$100,000 - $130,000",
+          "jobType": "Full-time",
+          "description": "Help customers solve AWS issues and optimize usage.",
+          "requirements": [
+            "Proficiency in AWS services",
+            "Strong customer support mindset",
+            "Linux and networking fundamentals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Meta",
+      "logo": "https://logo.clearbit.com/meta.com",
+      "location": "Menlo Park, CA",
+      "website": "https://www.meta.com",
+      "industry": "Social Media & VR",
+      "companySize": "80,000+ employees",
+      "about": "Meta builds technologies that help people connect, find communities, and grow businesses through platforms like Facebook, Instagram, and WhatsApp.",
+
+      "jobs": [
+        {
+          "id": "meta-001",
+          "title": "VR UX Designer",
+          "bannerImage": "https://example.com/banners/meta-vr.png",
+          "location": "Menlo Park, CA",
+          "salary": "$100,000 - $135,000",
+          "jobType": "Full-time",
+          "description": "Design user interfaces for virtual experiences.",
+          "requirements": [
+            "Experience in Unity or Unreal",
+            "Knowledge of interaction design",
+            "Creative and user-centered"
+          ]
+        },
+        {
+          "id": "meta-002",
+          "title": "Privacy Policy Analyst",
+          "bannerImage": "https://example.com/banners/meta-privacy.png",
+          "location": "Remote",
+          "salary": "$90,000 - $120,000",
+          "jobType": "Full-time",
+          "description": "Ensure user privacy and compliance across Meta apps.",
+          "requirements": [
+            "Understanding of GDPR and CCPA",
+            "Strong policy writing and legal research skills",
+            "Experience with tech industry"
+          ]
+        },
+        {
+          "id": "meta-003",
+          "title": "AI Research Scientist",
+          "bannerImage": "https://example.com/banners/meta-ai.png",
+          "location": "Menlo Park, CA",
+          "salary": "$150,000 - $200,000",
+          "jobType": "Full-time",
+          "description": "Research cutting-edge AI models and applications.",
+          "requirements": [
+            "PhD or strong research experience",
+            "Deep learning frameworks (e.g., PyTorch)",
+            "Published papers and real-world projects"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Netflix",
+      "logo": "https://logo.clearbit.com/netflix.com",
+      "location": "Los Gatos, CA",
+      "website": "https://www.netflix.com",
+      "industry": "Streaming & Entertainment",
+      "companySize": "70,000+ employees",
+      "about": "Netflix is the world's leading streaming entertainment service, offering TV series, documentaries, and feature films across a wide variety of genres.",
+
+      "jobs": [
+        {
+          "id": "nfx-001",
+          "title": "Content Data Analyst",
+          "bannerImage": "https://example.com/banners/netflix-analyst.png",
+          "location": "Los Gatos, CA",
+          "salary": "$95,000 - $125,000",
+          "jobType": "Full-time",
+          "description": "Analyze viewership and user trends.",
+          "requirements": [
+            "Proficiency in SQL and Python",
+            "Experience with data visualization",
+            "Statistical analysis knowledge"
+          ]
+        },
+        {
+          "id": "nfx-002",
+          "title": "Video Compression Engineer",
+          "bannerImage": "https://example.com/banners/netflix-video.png",
+          "location": "Los Gatos, CA",
+          "salary": "$130,000 - $165,000",
+          "jobType": "Full-time",
+          "description": "Optimize video quality across platforms.",
+          "requirements": [
+            "Experience with codecs and encoding",
+            "Knowledge of streaming protocols",
+            "Strong C/C++ development skills"
+          ]
+        },
+        {
+          "id": "nfx-003",
+          "title": "Talent Coordinator",
+          "bannerImage": "https://example.com/banners/netflix-talent.png",
+          "location": "Remote",
+          "salary": "$70,000 - $90,000",
+          "jobType": "Full-time",
+          "description": "Support casting and talent management teams.",
+          "requirements": [
+            "Excellent communication and coordination",
+            "Background in media or talent management",
+            "Organizational skills and discretion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Salesforce",
+      "logo": "https://logo.clearbit.com/salesforce.com",
+      "location": "San Francisco, CA",
+      "website": "https://www.salesforce.com",
+      "industry": "CRM & SaaS",
+      "companySize": "12,000+ employees",
+      "about": "Salesforce is a cloud-based software company providing customer relationship management services and a complementary suite of enterprise applications.",
+
+      "jobs": [
+        {
+          "id": "sf-001",
+          "title": "DevOps Engineer",
+          "bannerImage": "https://example.com/banners/salesforce-devops.png",
+          "location": "Remote",
+          "salary": "$110,000 - $145,000",
+          "jobType": "Full-time",
+          "description": "Maintain CI/CD pipelines for enterprise apps.",
+          "requirements": [
+            "Experience with Jenkins, Docker, Kubernetes",
+            "AWS or GCP experience",
+            "Strong scripting skills"
+          ]
+        },
+        {
+          "id": "sf-002",
+          "title": "Salesforce Admin",
+          "bannerImage": "https://example.com/banners/salesforce-admin.png",
+          "location": "San Francisco, CA",
+          "salary": "$85,000 - $105,000",
+          "jobType": "Full-time",
+          "description": "Administer Salesforce orgs and workflows.",
+          "requirements": [
+            "Salesforce Admin certification",
+            "Knowledge of Sales/Service Cloud",
+            "Process Builder and Flow experience"
+          ]
+        },
+        {
+          "id": "sf-003",
+          "title": "Business Analyst",
+          "bannerImage": "https://example.com/banners/salesforce-ba.png",
+          "location": "Remote",
+          "salary": "$90,000 - $120,000",
+          "jobType": "Full-time",
+          "description": "Analyze business needs and map to Salesforce solutions.",
+          "requirements": [
+            "Strong communication and analytical skills",
+            "Experience in requirement gathering",
+            "Familiarity with Agile methodologies"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Slack",
+      "logo": "https://logo.clearbit.com/slack.com",
+      "location": "San Francisco, CA",
+      "website": "https://slack.com",
+      "industry": "Workplace Collaboration",
+      "companySize": "2,000+ employees",
+      "about": "Slack is a messaging app for business that connects people to the information they need, helping teams work together more effectively.",
+
+      "jobs": [
+        {
+          "id": "slack-001",
+          "title": "Customer Success Manager",
+          "bannerImage": "https://example.com/banners/slack-customer.png",
+          "location": "Remote",
+          "salary": "$85,000 - $110,000",
+          "jobType": "Full-time",
+          "description": "Ensure client satisfaction and retention.",
+          "requirements": [
+            "Experience in customer success or SaaS",
+            "Strong communication and empathy",
+            "CRM tools experience"
+          ]
+        },
+        {
+          "id": "slack-002",
+          "title": "Frontend Engineer",
+          "bannerImage": "https://example.com/banners/slack-frontend.png",
+          "location": "San Francisco, CA",
+          "salary": "$110,000 - $140,000",
+          "jobType": "Full-time",
+          "description": "Develop Slack's web interface and features.",
+          "requirements": [
+            "Expertise in JavaScript and React",
+            "Clean code and component design",
+            "Experience with real-time apps"
+          ]
+        },
+        {
+          "id": "slack-003",
+          "title": "Technical Support Specialist",
+          "bannerImage": "https://example.com/banners/slack-support.png",
+          "location": "Remote",
+          "salary": "$65,000 - $85,000",
+          "jobType": "Full-time",
+          "description": "Assist users with technical issues and troubleshooting.",
+          "requirements": [
+            "Clear communication skills",
+            "Troubleshooting web and mobile issues",
+            "Familiarity with logs and support tools"
+          ]
+        }
+      ]
+    }
+  ]
+  

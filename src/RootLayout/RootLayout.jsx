@@ -100,7 +100,7 @@ const RootLayout = () => {
         <>
             <valueContext.Provider value={data}>
             <Navbar></Navbar>
-            <div className='w-10/12 mx-auto min-h-screen-[calc(100vh-330px)]'>
+            <div className='w-full mx-auto min-h-screen-[calc(100vh-330px)]'>
             <Outlet></Outlet>
             </div>
             </valueContext.Provider>
