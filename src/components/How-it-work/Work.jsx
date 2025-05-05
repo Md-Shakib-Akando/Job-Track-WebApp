@@ -24,13 +24,13 @@ const Work = () => {
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-100"></div>
 
             
-            <div className="relative mb-16 md:mb-0" >
+            <div className="relative mb-8 md:mb-0" >
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right order-2 md:order-1">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  <h3 className="text-xl text-center md:text-end font-bold text-gray-800 mb-3">
                     Go to the Companies
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-center md:text-end">
                     Browse through thousands of job listings from top companies
                     across various industries and locations.
                   </p>
@@ -46,7 +46,7 @@ const Work = () => {
             </div>
 
            
-            <div className="relative mb-16 md:mb-0 md:mt-24" >
+            <div className="relative mb-8 md:mb-0 md:mt-24" >
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 flex justify-center md:justify-end order-1">
                   <div className="relative">
@@ -56,10 +56,10 @@ const Work = () => {
                   </div>
                 </div>
                 <div className="md:w-1/2 md:pl-16 mb-8 md:mb-0 md:text-left order-2">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  <h3 className="text-xl text-center md:text-start font-bold text-gray-800 mb-3">
                     Check Your Match
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-center md:text-start">
                     See how well your skills and experience align with job
                     requirements before you apply.
                   </p>
@@ -71,10 +71,10 @@ const Work = () => {
             <div className="relative md:mt-24" >
               <div className="flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right order-2 md:order-1">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3" >
+                  <h3 className="text-xl text-center md:text-end font-bold text-gray-800 mb-3" >
                     Apply with Confidence
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-600 text-center md:text-end">
                     Submit your application directly through our platform and
                     track your application status.
                   </p>

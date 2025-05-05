@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 import { Link, NavLink } from 'react-router';
+import { valueContext } from '../RootLayout/RootLayout';
 const LogIn = () => {
+    const {handleLogin}=useContext(valueContext);
+    const handleSignIn=(e)=>{
+        e.preventDefault();
+        const email=e.target.email.value
+        const password=e.target.password.value
+        handleLogin(email,password)
+    }
     return (
         <div className='pt-20 md:pt-40'>
             <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
-                <form noValidate className="space-y-4">
+                <form onSubmit={handleSignIn} className="space-y-4">
                     <div className="space-y-2 text-sm">
-                        <label htmlFor="username" className="block font-medium text-gray-700">Username</label>
+                        <label htmlFor="username" className="block font-medium text-gray-700">Email</label>
                         <input
-                            type="text"
-                            name="username"
-                            id="username"
-                            placeholder="Username"
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="email"
+                            required
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
@@ -24,6 +33,7 @@ const LogIn = () => {
                             type="password"
                             name="password"
                             id="password"
+                            required
                             placeholder="Password"
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -31,7 +41,7 @@ const LogIn = () => {
                             <a href="#" className="hover:underline">Forgot Password?</a>
                         </div>
                     </div>
-                    <button className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
+                    <button type='submit' className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
                         Sign in
                     </button>
                 </form>

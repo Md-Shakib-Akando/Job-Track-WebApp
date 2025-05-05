@@ -9,6 +9,7 @@ import Home from "../Pages/Home";
 import Companies from "../Pages/Companies";
 import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
+import Profile from "../Pages/Profile";
  
   
  export const router = createBrowserRouter([
@@ -25,6 +26,9 @@ import Register from "../Pages/Register";
         },
         {
           path:'/register', Component:Register,
+        },
+        {
+          path:'/profile', Component:Profile,
         }
       ]
     },

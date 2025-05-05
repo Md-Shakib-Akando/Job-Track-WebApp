@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaBars } from "react-icons/fa";
 import Logo from '../../assets/Job-Track logo.png'
 import { GoX } from "react-icons/go";
 import { NavLink } from 'react-router';
+import { valueContext } from '../../RootLayout/RootLayout';
+import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
-  const [menu,setMenu]=useState(false)
+  const [menu,setMenu]=useState(false);
+  const {user}=useContext(valueContext);
   const link = <>
 
     <NavLink
@@ -26,6 +29,7 @@ const Navbar = () => {
   const toggleButton=()=>{
     setMenu(!menu)
   }
+
   return (
     <div className="  bg-gray-50 font-sans">
 
@@ -42,12 +46,16 @@ const Navbar = () => {
               
             </div>
             <div className='flex gap-4'>
-              <NavLink to='/login'>
+              {
+                user?<NavLink to='/profile'><CgProfile size={32} /></NavLink>:<>
+                <NavLink to='/login'>
               <button className="btn btn-soft btn-primary">SignIn</button>
               </NavLink>
               <NavLink to='/register'>
               <button className="btn btn-soft btn-primary">SignUp</button>
               </NavLink>
+                </>
+              }
             </div>
 
 

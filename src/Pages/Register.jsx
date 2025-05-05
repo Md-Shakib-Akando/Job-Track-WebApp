@@ -1,18 +1,49 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
+import { valueContext } from '../RootLayout/RootLayout';
 const Register = () => {
+    const {handleRegister}=useContext( valueContext )
+    const [error,setError]=useState();
+    const handleSignUp=(e)=>{
+        e.preventDefault();
+
+        const name=e.target.name.value;
+        const photo=e.target.photo.value;
+        const email=e.target.email.value;
+        const password=e.target.password.value;
+        setError('');
+
+        const Upass = /[A-Z]/.test(password);
+        const Lpass = /[a-z]/.test(password);
+        const Length = password.length >= 6;
+        if(!Upass){
+            setError("At least one Uppercase letter!");
+            return;
+        }
+        if(!Lpass){
+            setError("At least one Lowercase letter!");
+            return;
+        }
+        if(!Length){
+            setError('at least 6 characters password! ')
+            return;
+        }
+
+        handleRegister(email,password)
+    }
     return (
         <div className='pt-20 md:pt-20'>
             <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
-                <form noValidate className="space-y-4">
+                <form onSubmit={handleSignUp} className="space-y-4">
                     <div className="space-y-2 text-sm">
                         <label htmlFor="name" className="block font-medium text-gray-700">Name</label>
                         <input
                             type="text"
                             name="name"
                             id="name"
+                            required
                             placeholder="Full Name"
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -23,6 +54,7 @@ const Register = () => {
                             type="text"
                             name="photo"
                             id="photo"
+                            required
                             placeholder="Photo URL"
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -34,6 +66,7 @@ const Register = () => {
                             type="email"
                             name="email"
                             id="email"
+                            required
                             placeholder="Email Address"
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
@@ -45,11 +78,15 @@ const Register = () => {
                             type="password"
                             name="password"
                             id="password"
+                            required
                             placeholder="Password"
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
-                    <button className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
+                    {
+                        error&&<p className='text-sm text-red-500'>{error}</p>
+                    }
+                    <button type='submit' className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
                         Register
                     </button>
                 </form>
