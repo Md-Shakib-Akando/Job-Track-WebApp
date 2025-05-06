@@ -23,7 +23,12 @@ const Navbar = () => {
      Top Companies
     </NavLink>
     
-
+    <NavLink
+      to='/faq'
+      className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+    >
+     FAQ
+    </NavLink>
     
   </>
 
@@ -40,7 +45,7 @@ const Navbar = () => {
             <img className='h-16 w-16 rounded-xl' src={Logo} alt="" />
             <h2 className='text-2xl md:text-4xl font-bold'>JOB TRACK</h2>
           </div>
-          <nav className="flex items-center  space-x-4">
+          <nav className="flex items-center gap-4  md:gap-20">
             <div className="hidden md:flex items-center space-x-8">
 
               {link}

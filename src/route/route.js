@@ -11,6 +11,7 @@ import Register from "../Pages/Register";
 import Profile from "../Pages/Profile";
 import CompanyDetails from "../Pages/CompanyDetails";
 import Companies from "../Pages/Companies";
+import FAQ from "../Pages/FAQ";
 
  
   
@@ -43,6 +44,10 @@ import Companies from "../Pages/Companies";
         {
           path:'/profile', Component:Profile,
         },
+        {
+          path:'/faq',
+          Component:FAQ,
+        }
         
       ]
     },

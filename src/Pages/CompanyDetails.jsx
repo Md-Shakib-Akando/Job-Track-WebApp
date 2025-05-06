@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import React, { useEffect, useState } from 'react';
+import { Link, useLoaderData, useParams } from 'react-router';
 
 const CompanyDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
+    const [selectedJob, setSelectedJob] = useState(null);
     useEffect(() => {
-                document.title = 'JobTrack | CompanyDetails';
-              }, []);
+        document.title = 'JobTrack | CompanyDetails';
+    }, []);
     const Details = data.find((singleData) => singleData.id === id);
-    
-    const { name, logo, about, companySize, industry, location } = Details
+
+    const { name, logo, about, companySize, industry, location,website } = Details
     return (
         <>
             <section className="py-20 bg-gray-90">
@@ -57,38 +58,82 @@ const CompanyDetails = () => {
 
                 <h2 className="text-2xl font-bold text-center mb-6">Available Positions</h2>
                 <div className="space-y-6 w-[79%] mx-auto">
-                    {
-                        Details.jobs.map((singleJob, index) => (
-                            <div
-                                key={index}
-                                className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300"
-                            >
-                                <div className="flex justify-between items-start mb-4">
-                                    <div>
-                                        <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">
-                                            {singleJob.title}
-                                        </h3>
-                                        <p className="text-gray-600 mb-2">{singleJob.location}</p>
-                                    </div>
-                                    <span className="bg-blue-100 text-blue-800 px-1 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">
-                                       {singleJob.jobType}
-                                    </span>
+                    {Details.jobs.map((singleJob) => (
+                        <div key={singleJob.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
+                            <div className="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 className="text-lg md:text-xl font-semibold text-gray-800 mb-2">{singleJob.title}</h3>
+                                    <p className="text-gray-600 mb-2">{singleJob.location}</p>
                                 </div>
-                                <p className="text-gray-700 font-medium mb-4">
-                                    Salary Range: {singleJob.salary}
-                                </p>
-                                <button
-                                    
-                                    className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-300 !rounded-button whitespace-nowrap cursor-pointer"
-                                >
-                                    View Details
-                                </button>
+                                <span className="bg-blue-100 text-blue-800 px-1 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">
+                                    {singleJob.jobType}
+                                </span>
                             </div>
-                        ))
-                    }
+                            <p className="text-gray-700 font-medium mb-4">Salary Range: {singleJob.salary}</p>
+                            <button
+                                onClick={() => setSelectedJob(singleJob)}
+                                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg font-medium transition-colors duration-300"
+                            >
+                                View Details
+                            </button>
+                        </div>
+                    ))}
                 </div>
 
 
+                {selectedJob && (
+                    <div className="fixed inset-0  bg-opacity-50 z-50 flex items-center justify-center">
+                        <div className="bg-white rounded-xl shadow-2xl w-11/12 max-w-3xl max-h-[90vh] overflow-y-auto">
+                            <div className="p-8">
+                                <div className="flex justify-between items-start mb-6">
+                                    <div>
+                                        <h3 className="text-2xl font-bold text-gray-800 mb-2">{selectedJob.title}</h3>
+                                        <p className="text-gray-600">{selectedJob.location}</p>
+                                    </div>
+                                    <button
+                                        onClick={() => setSelectedJob(null)}
+                                        className="text-gray-400 hover:text-gray-600 transition-colors duration-200 text-2xl"
+                                    >
+                                        &times;
+                                    </button>
+                                </div>
+                                <div className="space-y-6">
+                                    <div>
+                                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Job Description</h4>
+                                        <p className="text-gray-600 whitespace-pre-line">{selectedJob.description}</p>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Job Type</h4>
+                                        <p className="text-gray-600 whitespace-pre-line">{selectedJob.jobType}</p>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Salary</h4>
+                                        <p className="text-gray-600 whitespace-pre-line">{selectedJob.salary}</p>
+                                    </div>
+                                    <div>
+                                        <h4 className="text-lg font-semibold text-gray-800 mb-2">Requirements</h4>
+                                        <ul className="list-disc list-inside text-gray-600 space-y-1">
+                                            {selectedJob.requirements.map((req, index) => (
+                                                <li key={index}>{req}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+
+                                    <div className="flex justify-end pt-6">
+                                        <Link
+                                           to={website}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors duration-300"
+                                        >
+                                            Apply Now
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </section>
         </>
     );
