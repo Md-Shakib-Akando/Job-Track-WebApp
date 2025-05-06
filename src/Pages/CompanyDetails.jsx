@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLoaderData, useParams } from 'react-router';
 
 const CompanyDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
+    useEffect(() => {
+                document.title = 'JobTrack | CompanyDetails';
+              }, []);
     const Details = data.find((singleData) => singleData.id === id);
+    
     const { name, logo, about, companySize, industry, location } = Details
     return (
         <>

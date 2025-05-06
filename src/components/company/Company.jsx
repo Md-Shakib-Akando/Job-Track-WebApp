@@ -1,6 +1,7 @@
 import React from 'react';
 import CompanyCard from './CompanyCard';
 
+
 const Company = ({ data }) => {
 
 
@@ -14,7 +15,8 @@ const Company = ({ data }) => {
         </div>
             <div className='w-10/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 p-4'>
                 {data.map((singleData) => (
-                    <CompanyCard key={singleData.id} singleData={singleData} />
+                   <CompanyCard key={singleData.id} singleData={singleData} />
+                   
                 ))}
             </div>
         </>

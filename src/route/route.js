@@ -10,6 +10,8 @@ import LogIn from "../Pages/LogIn";
 import Register from "../Pages/Register";
 import Profile from "../Pages/Profile";
 import CompanyDetails from "../Pages/CompanyDetails";
+import Companies from "../Pages/Companies";
+
  
   
  export const router = createBrowserRouter([
@@ -22,10 +24,16 @@ import CompanyDetails from "../Pages/CompanyDetails";
         loader:()=>fetch('/Companies.json')
         },
         {
+          path:'/companies',
+          Component:Companies,
+          loader:()=>fetch('/Companies.json')
+        },
+        {
             path:"/companyDetails/:id",
             Component:CompanyDetails,
             loader:()=>fetch('/Companies.json')
         },
+        
         {
           path:'/login', Component:LogIn,
         },
@@ -34,7 +42,8 @@ import CompanyDetails from "../Pages/CompanyDetails";
         },
         {
           path:'/profile', Component:Profile,
-        }
+        },
+        
       ]
     },
   ]);

@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { valueContext } from '../RootLayout/RootLayout';
 import { NavLink } from 'react-router';
 import { toast } from 'react-toastify';
@@ -31,6 +31,9 @@ const Profile = () => {
                         toast.error(error.message);
                     });
     }
+    useEffect(() => {
+            document.title = 'JobTrack | Profile';
+          }, []);
     return (
         <>
             <div className='flex justify-center items-center my-32 '>
