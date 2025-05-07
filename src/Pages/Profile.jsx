@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { valueContext } from '../RootLayout/RootLayout';
-import { NavLink } from 'react-router';
+
 import { toast } from 'react-toastify';
 import { updateProfile } from 'firebase/auth';
 
@@ -9,7 +9,7 @@ const Profile = () => {
     const [updatePro,setUpdateProfile]=useState(false)
     const nameRef = useRef();
    const photoRef = useRef()
-   
+
     const handleLogOut = () => {
         handleSignOut();
     }
@@ -38,7 +38,7 @@ const Profile = () => {
         <>
             <div className='flex justify-center items-center my-32 '>
                 {
-                    user ? <>
+                  
                         <div className=' p-4 md:p-8 border border-gray-300 shadow-xl rounded-2xl'>
                             <div>
                                 <img className='h-70 w-70' src={user.photoURL} alt="" />
@@ -79,7 +79,7 @@ const Profile = () => {
                                     />
                                 </div>
                                 <div className='mt-2 text-end'>
-                                <button type='submit' className='btn btn-primary'>OK</button>
+                                <button type='submit' className='btn btn-primary'>Update</button>
                                 </div>
                             </form>
                                 )
@@ -91,18 +91,9 @@ const Profile = () => {
                         </div>
                         
 
-                    </> : <>
+                     
 
-                        <div className='bg-base-300 border border-gray-100 rounded-xl px-4 py-18  mt-20'>
-                            <h2 className='text-4xl text-center font-bold mb-5'>
-                                User Not Found!
-                            </h2>
-
-                            <p className='text-xl text-center font-bold mb-8'>Please SignUp Your Account</p>
-                            <NavLink to='/'><button className='btn btn-outline btn-secondary w-full'>Back to Home</button></NavLink>
-                        </div>
-
-                    </>
+                    
                 }
             </div>
         </>

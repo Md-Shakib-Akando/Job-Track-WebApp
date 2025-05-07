@@ -4,7 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { Link, NavLink } from 'react-router';
 import { valueContext } from '../RootLayout/RootLayout';
 const LogIn = () => {
-    const {handleLogin,handleGoogleSignIn,handleForgetPass}=useContext(valueContext);
+    const {handleLogin,handleGoogleSignIn,handleForgetPass,error}=useContext(valueContext);
     const emailRef=useRef();
     const handleSignIn=(e)=>{
         e.preventDefault();
@@ -14,7 +14,7 @@ const LogIn = () => {
         
     }
     return (
-        <div className='pt-20 md:pt-40'>
+        <div className='pt-20 pb-20 md:pt-40'>
             <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSignIn} className="space-y-4">
@@ -44,6 +44,9 @@ const LogIn = () => {
                             <Link onClick={()=>handleForgetPass(emailRef.current.value)} className="hover:underline">Forgot Password?</Link>
                         </div>
                     </div>
+                    {
+                        error&&<p className='text-red-600'>{error.message}</p>
+                    }
                     <button type='submit' className="block w-full p-3 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
                         Sign in
                     </button>

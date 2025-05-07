@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/Job-Track logo.png'
+
 import { NavLink } from 'react-router';
 const Footer = () => {
     return (
@@ -7,7 +7,7 @@ const Footer = () => {
 
             <div className='flex flex-col justify-center items-center gap-5'>
                 <div className="flex items-center gap-2">
-                    <img className='h-16 w-16 rounded-xl' src={Logo} alt="" />
+                    <img className='h-16 w-16 rounded-xl' src='/Job-Track logo.png' alt="" />
 
                 </div>
 
@@ -26,6 +26,13 @@ const Footer = () => {
                     >
                        Top Companies
                     </NavLink>
+
+                    <NavLink
+                          to='/faq'
+                          className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
+                        >
+                         FAQ
+                        </NavLink>
                     
                 </nav>
 

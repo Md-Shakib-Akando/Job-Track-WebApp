@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { FaBars } from "react-icons/fa";
-import Logo from '../../assets/Job-Track logo.png'
+
 import { GoX } from "react-icons/go";
 import { NavLink } from 'react-router';
 import { valueContext } from '../../RootLayout/RootLayout';
@@ -8,6 +8,7 @@ import { CgProfile } from "react-icons/cg";
 const Navbar = () => {
   const [menu,setMenu]=useState(false);
   const {user}=useContext(valueContext);
+  
   const link = <>
 
     <NavLink
@@ -42,7 +43,7 @@ const Navbar = () => {
       <header className=" sticky top-0 z-50 bg-white shadow-sm">
         <div className=" w-10/12 mx-auto py-5 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <img className='h-16 w-16 rounded-xl' src={Logo} alt="" />
+            <img className='h-16 w-16 rounded-xl' src='/Job-Track logo.png' alt="" />
             <h2 className='text-2xl md:text-4xl font-bold'>JOB TRACK</h2>
           </div>
           <nav className="flex items-center gap-4  md:gap-20">
