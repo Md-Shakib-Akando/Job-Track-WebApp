@@ -4,10 +4,15 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, NavLink, useNavigate } from 'react-router';
 import { valueContext } from '../RootLayout/RootLayout';
 import AuthImg from '../../src/assets/AuthImg.jpg'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 const LogIn = () => {
     const {handleLogin,handleGoogleSignIn,error}=useContext(valueContext);
     const [email,setEmail]=useState("")
     const navigate=useNavigate();
+    const logRef = useRef();
     const emailRef=useRef();
     const handleSignIn=(e)=>{
         e.preventDefault();
@@ -22,6 +27,30 @@ const LogIn = () => {
     useEffect(()=>{
             document.title='JobTrack | Login';
         },[])
+        
+        
+      
+        useEffect(() => {
+          const ctx = gsap.context(() => {
+            gsap.from(logRef.current, {
+              x: 100,
+              opacity: 0,
+              duration: 1,
+              delay: 0.3,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: logRef.current,
+                start: 'top 80%',
+              },
+            });
+          
+      
+           
+            
+          }, );
+      
+          return () => ctx.revert();
+        }, []);
     return (
         <div className="min-h-screen flex">
         
@@ -44,7 +73,7 @@ const LogIn = () => {
 
         
         <div className="w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50">
-            <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
+            <div ref={logRef} className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
                 <form onSubmit={handleSignIn} className="space-y-4">
                     <div className="space-y-2 text-sm">

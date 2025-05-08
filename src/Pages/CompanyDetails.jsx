@@ -1,12 +1,61 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLoaderData, useParams } from 'react-router';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 const CompanyDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const [selectedJob, setSelectedJob] = useState(null);
     useEffect(() => {
         document.title = 'JobTrack | CompanyDetails';
+    }, []);
+    const cardRef = useRef();
+    const slideRef = useRef();
+    const textRef = useRef();
+  
+    useEffect(() => {
+      const ctx = gsap.context(() => {
+        gsap.from(textRef.current, {
+          scaleY:2,
+          opacity: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: 'top 80%',
+          },
+        });
+        gsap.from(cardRef.current, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: cardRef.current,
+            start: 'top 80%',
+          },
+        });
+        gsap.from(slideRef.current, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          delay:0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: slideRef.current,
+            start: 'top 80%',
+          },
+        });
+  
+       
+        
+      }, );
+  
+      return () => ctx.revert();
     }, []);
     const Details = data.find((singleData) => singleData.id === id);
 
@@ -15,7 +64,7 @@ const CompanyDetails = () => {
         <>
             <section className="py-20 bg-gray-90">
                 <div className="container mx-auto px-6">
-                    <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+                    <div ref={cardRef} className="bg-white rounded-xl shadow-lg p-8 mb-12">
                         <div className="flex items-center mb-6">
                             <div className="w-24 h-24 bg-gray-100 rounded-lg flex items-center justify-center mr-6">
                                 <img className='p-5' src={logo} alt="" />
@@ -56,8 +105,8 @@ const CompanyDetails = () => {
 
 
 
-                <h2 className="text-2xl font-bold text-center mb-6">Available Positions</h2>
-                <div className="space-y-6 w-[79%] mx-auto">
+                <h2 ref={textRef} className="text-2xl md:text-4xl font-bold text-center my-6">Available Positions</h2>
+                <div ref={slideRef} className="space-y-6 w-[79%] mx-auto">
                     {Details.jobs.map((singleJob) => (
                         <div key={singleJob.id} className="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow duration-300">
                             <div className="flex justify-between items-start mb-4">

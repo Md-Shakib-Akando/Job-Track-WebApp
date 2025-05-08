@@ -1,13 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { valueContext } from '../RootLayout/RootLayout';
 import AuthImg from '../assets/AuthImg.jpg'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 const Register = () => {
     
     const {handleRegister,handleGoogleSignIn}=useContext( valueContext )
     const [error,setError]=useState();
+    const SignUpRef = useRef();
     const handleSignUp=(e)=>{
         e.preventDefault();
 
@@ -39,6 +43,28 @@ const Register = () => {
     useEffect(()=>{
                 document.title='JobTrack | Register';
             },[])
+            
+        useEffect(() => {
+            const ctx = gsap.context(() => {
+              gsap.from(SignUpRef.current, {
+                x: 100,
+                opacity: 0,
+                duration: 1,
+                delay: 0.3,
+                ease: 'power3.out',
+                scrollTrigger: {
+                  trigger: SignUpRef.current,
+                  start: 'top 80%',
+                },
+              });
+            
+        
+             
+              
+            }, );
+        
+            return () => ctx.revert();
+          }, []);
     return (
 
 
@@ -61,7 +87,7 @@ const Register = () => {
                 </div>
 
         <div className='w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50'>
-            <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
+            <div ref={SignUpRef} className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSignUp} className="space-y-4">
                     <div className="space-y-2 text-sm">

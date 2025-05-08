@@ -1,10 +1,49 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FaStar } from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 const Success = () => {
+    const textRef = useRef();
+    const slideRef = useRef();
+  
+    useEffect(() => {
+      const ctx = gsap.context(() => {
+        gsap.from(textRef.current, {
+          y: 100,
+          opacity: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: 'top 80%',
+          },
+        });
+        gsap.from(slideRef.current, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          delay:0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: slideRef.current,
+            start: 'top 80%',
+          },
+        });
+  
+       
+        
+      }, );
+  
+      return () => ctx.revert();
+    }, []);
+
     return (
         <>
-            <div className="text-center mb-16">
+            <div ref={textRef} className="text-center mb-16">
                 <h2 className="text-3xl font-bold text-gray-800 mb-4">
                     Success Stories
                 </h2>
@@ -13,7 +52,7 @@ const Success = () => {
                     Job Track.
                 </p>
             </div>
-            <div className="carousel w-full">
+            <div ref={slideRef} className="carousel w-full">
 
                 <div id="slide1" className="carousel-item relative w-full">
                     <div className="bg-white max-w-4xl mx-auto p-6 md:p-8 rounded-xl border border-gray-200 shadow-sm h-fit text-center">

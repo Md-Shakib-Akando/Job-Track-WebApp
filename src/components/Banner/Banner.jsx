@@ -1,15 +1,51 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import BannerImg from '../../assets/bannerImg.jpg'
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+gsap.registerPlugin(ScrollTrigger);
 
 const Banner = () => {
 
+ 
+    const bannerRef = useRef();
+    const imgRef = useRef();
+    const textRef = useRef();
+  
+    useEffect(() => {
+      const ctx = gsap.context(() => {
+        gsap.from(textRef.current, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: textRef.current,
+            start: 'top 80%',
+          },
+        });
+  
+        gsap.from(imgRef.current, {
+          y: 50,
+          opacity: 0,
+          duration: 1,
+          delay: 0.3,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: imgRef.current,
+            start: 'top 80%',
+          },
+        });
+      }, bannerRef);
+  
+      return () => ctx.revert();
+    }, []);
   
     return (
-        <section className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <section ref={bannerRef} className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           
-          <div className="w-full xl:w-2/5 mb-10 lg:mb-0  lg:pr-12">
+          <div ref={textRef} className="w-full xl:w-2/5 mb-10 lg:mb-0  lg:pr-12">
             <h1 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-4">
               Find Your Dream Job With JobTrack
             </h1>
@@ -29,7 +65,7 @@ const Banner = () => {
           </div>
 
          
-          <div className="w-full  xl:w-2/5 overflow-hidden rounded-xl shadow-xl">
+          <div ref={imgRef} className="w-full  xl:w-2/5 overflow-hidden rounded-xl shadow-xl">
             <img
               src={BannerImg}
               alt="Job tracking platform interface"
