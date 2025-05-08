@@ -9,9 +9,7 @@ const Profile = () => {
     
     
 
-    const handleLogOut = () => {
-        handleSignOut();
-    }
+    
     
     
     useEffect(() => {
@@ -41,7 +39,7 @@ const Profile = () => {
                             
                         </div>
                             <div className=' text-center mt-3'>
-                                <button onClick={handleLogOut} className='btn btn-outline btn-secondary w-full'>Log Out</button>
+                                <button onClick={ handleSignOut} className='btn btn-outline btn-secondary w-full'>Log Out</button>
                             </div>
                         </div>
                         

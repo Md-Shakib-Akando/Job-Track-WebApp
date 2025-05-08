@@ -82,6 +82,7 @@ const RootLayout = () => {
         sendPasswordResetEmail(auth,email)
         .then(()=>{
             toast.info("Check Your Mailbox")
+            window.open("https://mail.google.com", "_blank");
         }).catch(error=>{
             toast.error(error.message)
         })
