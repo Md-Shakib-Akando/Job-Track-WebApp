@@ -78,6 +78,7 @@ const RootLayout = () => {
     }, [auth]);
 
     const handleForgetPass=(email)=>{
+        if (!email) return toast.warn("Please provide an email address");
         sendPasswordResetEmail(auth,email)
         .then(()=>{
             toast.info("Check Your Mailbox")

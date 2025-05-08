@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router';
 import ErrorImg from '../assets/Error-Page.jpg'
 import { FaHome } from 'react-icons/fa';
 const ErrorPage = () => {
+  useEffect(() => {
+          document.title = 'JobTrack | Error';
+      }, []);
     return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-4 text-center">

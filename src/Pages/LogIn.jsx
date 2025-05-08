@@ -1,11 +1,13 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { FcGoogle } from "react-icons/fc";
 
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import { valueContext } from '../RootLayout/RootLayout';
 import AuthImg from '../../src/assets/AuthImg.jpg'
 const LogIn = () => {
-    const {handleLogin,handleGoogleSignIn,handleForgetPass,error}=useContext(valueContext);
+    const {handleLogin,handleGoogleSignIn,error}=useContext(valueContext);
+    const [email,setEmail]=useState("")
+    const navigate=useNavigate();
     const emailRef=useRef();
     const handleSignIn=(e)=>{
         e.preventDefault();
@@ -13,6 +15,9 @@ const LogIn = () => {
         const password=e.target.password.value
         handleLogin(email,password)
         
+    }
+    const handleForgotPass=()=>{
+        navigate("/forgetPassword",{ state: { email } })
     }
     useEffect(()=>{
             document.title='JobTrack | Login';
@@ -51,6 +56,8 @@ const LogIn = () => {
                             placeholder="email"
                             required
                             ref={emailRef}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                     </div>
@@ -65,7 +72,7 @@ const LogIn = () => {
                             className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                         />
                         <div className="flex justify-end text-xs text-blue-600">
-                            <Link onClick={()=>handleForgetPass(emailRef.current.value)} className="hover:underline">Forgot Password?</Link>
+                            <button type='button' onClick={handleForgotPass} className="hover:underline">Forgot Password?</button>
                         </div>
                     </div>
                     {
