@@ -4,6 +4,8 @@ import Work from '../components/How-it-work/Work';
 import { useLoaderData } from 'react-router';
 import Company from '../components/company/Company';
 import Success from '../components/Success/Success';
+import NextOp from '../components/NextOp';
+import JobCategory from '../components/JobCategory/JobCategory';
 
 const Home = () => {
     const data = useLoaderData();
@@ -21,8 +23,12 @@ const Home = () => {
                <Company data={data}></Company>
             </div>
             <div className="w-10/12 mx-auto py-10">
+               <JobCategory></JobCategory>
+            </div>
+            <div className="w-10/12 mx-auto py-10">
                 <Success></Success>
             </div>
+            <NextOp></NextOp>
         </>
     );
 };

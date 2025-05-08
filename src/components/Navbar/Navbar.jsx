@@ -44,10 +44,10 @@ const Navbar = () => {
         <div className=" w-10/12 mx-auto py-5 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <img className='h-16 w-16 rounded-xl' src='/Job-Track logo.png' alt="" />
-            <h2 className='text-2xl md:text-4xl font-bold'>JOB TRACK</h2>
+            <h2 className='text-2xl md:text-3xl lg:text-4xl font-bold'>JOB TRACK</h2>
           </div>
           <nav className="flex items-center gap-4  md:gap-20">
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
 
               {link}
               
@@ -61,7 +61,7 @@ const Navbar = () => {
                   className="w-10 h-10 rounded-full border-2 border-blue-500"
                 />:<CgProfile size={32} />
                 }</NavLink>):(<>
-               <div className='hidden md:flex gap-4 '>
+               <div className='hidden lg:flex gap-4 '>
                <NavLink to='/login'>
               <button className="btn btn-soft btn-primary">SignIn</button>
               </NavLink>
@@ -74,7 +74,7 @@ const Navbar = () => {
             </div>
 
 
-            <div className="dropdown md:hidden flex justify-center items-center">
+            <div className="dropdown lg:hidden flex justify-center items-center">
               <button onClick={toggleButton} className=" text-gray-500 focus:outline-none cursor-pointer">
                 {menu?<GoX size={24} />:<FaBars />}
               </button>

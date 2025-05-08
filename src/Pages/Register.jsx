@@ -1,8 +1,8 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { valueContext } from '../RootLayout/RootLayout';
-
+import AuthImg from '../assets/AuthImg.jpg'
 
 const Register = () => {
     
@@ -36,8 +36,31 @@ const Register = () => {
         handleRegister(email,password,name,photo)
        
     }
+    useEffect(()=>{
+                document.title='JobTrack | Register';
+            },[])
     return (
-        <div className='pt-20 pb-20 md:pt-20'>
+
+
+        <div className='min-h-screen flex'>
+            <div className="hidden  lg:block lg:w-1/2 relative">
+                  <img
+                    src={AuthImg}
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 to-blue-600/75 flex items-center justify-center">
+                    <div className="text-white max-w-xl px-12">
+                      <h1 className="text-4xl font-bold mb-6">Welcome to Job Track</h1>
+                      <p className="text-xl">
+                        Find your dream job and take the next step in your career
+                        journey.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+        <div className='w-full lg:w-1/2 flex items-center justify-center p-8 bg-gray-50'>
             <div className="w-full max-w-md mx-auto border border-gray-200 bg-white shadow-lg p-8 space-y-6 rounded-xl">
                 <h1 className="text-2xl font-bold text-center">Register</h1>
                 <form onSubmit={handleSignUp} className="space-y-4">
@@ -119,6 +142,7 @@ const Register = () => {
                     <Link to='/login' className="text-blue-600 hover:underline ml-1">Login</Link>
                 </p>
             </div>
+        </div>
         </div>
 
     );

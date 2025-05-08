@@ -1,36 +1,19 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { valueContext } from '../RootLayout/RootLayout';
 
-import { toast } from 'react-toastify';
-import { updateProfile } from 'firebase/auth';
+
+import { Link } from 'react-router';
 
 const Profile = () => {
-    const { handleSignOut, user ,setUser} = useContext(valueContext)
-    const [updatePro,setUpdateProfile]=useState(false)
-    const nameRef = useRef();
-   const photoRef = useRef()
+    const { handleSignOut, user } = useContext(valueContext)
+    
+    
 
     const handleLogOut = () => {
         handleSignOut();
     }
-    const toggleUpdateProfile=()=>{
-        setUpdateProfile(!updatePro);
-    }
-    const handleUpdateProfile=(e)=>{
-        e.preventDefault();
-        const updatedName = nameRef.current.value;
-        const updatedPhoto = photoRef.current.value;
-
-        updateProfile(user,{displayName:updatedName,photoURL:updatedPhoto})
-                    .then(() => {
-                        setUser({ ...user, displayName: updatedName, photoURL: updatedPhoto });
-                        toast.success("Sign Up Successfully Done");
-                      
-                    })
-                    .catch(error => {
-                        toast.error(error.message);
-                    });
-    }
+    
+    
     useEffect(() => {
             document.title = 'JobTrack | Profile';
           }, []);
@@ -50,42 +33,14 @@ const Profile = () => {
 
                             </div>
                             <div>
-                            <button onClick={toggleUpdateProfile} className='btn btn-outline btn-secondary hover:bg-green-600 border-green-600 text-green-600 hover:text-white w-full mb-2'>{updatePro?'Hide Update Form':'Profile Update'}</button>
-                            {
-                                updatePro&&(
-                                    <form onSubmit={handleUpdateProfile} >
-                                <div className="space-y-2 text-sm">
-                                    <label htmlFor="name" className="block font-medium text-gray-700">Name</label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        required
-                                        ref={nameRef}  
-                                        placeholder="Full Name"
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                                    />
-                                </div>
-                                <div className="space-y-2 text-sm">
-                                    <label htmlFor="photo" className="block font-medium text-gray-700">Photo URL</label>
-                                    <input
-                                        type="text"
-                                        name="photo"
-                                        id="photo"
-                                        required
-                                        ref={photoRef}
-                                        placeholder="Photo URL"
-                                        className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                                    />
-                                </div>
-                                <div className='mt-2 text-end'>
-                                <button type='submit' className='btn btn-primary'>Update</button>
-                                </div>
-                            </form>
-                                )
-                            }
+                            <Link to='/profileUpdate'>
+                            <button  className='btn btn-outline btn-secondary hover:bg-green-600 border-green-600 text-green-600 hover:text-white w-full mb-2'>Profile Update</button>
+                            </Link>
+                            
+                                  
+                            
                         </div>
-                            <div className=' text-center mt-10'>
+                            <div className=' text-center mt-3'>
                                 <button onClick={handleLogOut} className='btn btn-outline btn-secondary w-full'>Log Out</button>
                             </div>
                         </div>

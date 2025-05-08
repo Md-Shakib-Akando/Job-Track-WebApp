@@ -3,7 +3,7 @@ import React from 'react';
 import { NavLink } from 'react-router';
 const Footer = () => {
     return (
-        <footer className=" bg-base-300  rounded p-10">
+        <footer className=" bg-gray-300 rounded p-10">
 
             <div className='flex flex-col justify-center items-center gap-5'>
                 <div className="flex items-center gap-2">
@@ -21,7 +21,7 @@ const Footer = () => {
                         Home
                     </NavLink>
                     <NavLink
-                        to='/companyDetails'
+                        to='/companies'
                         className="text-gray-600 text-lg hover:text-blue-600 transition-colors duration-200 cursor-pointer"
                     >
                        Top Companies

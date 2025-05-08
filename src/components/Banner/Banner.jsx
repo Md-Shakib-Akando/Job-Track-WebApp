@@ -1,28 +1,43 @@
 import React from 'react';
-import BannerImg from '../../assets/banner.png'
+import BannerImg from '../../assets/bannerImg.jpg'
 
 
 const Banner = () => {
 
   
     return (
-        <div className='flex flex-col-reverse  md:flex-row justify-between items-center gap-6 py-10  md:mt-12 '>
-            <div >
-                <h1 className='text-2xl md:text-6xl text-center md:text-start font-bold'>Find Your Perfect <br className='md:hidden' /><span className='text-blue-600'>Career  Match</span></h1>
-                <p className='text-sm  md:text-2xl text-gray-600 my-4 text-center md:text-start md:my-8'>Discover thousands of job opportunities from top <br /> companies and see if you match their requirements <br className='hidden md:flex' /> before applying.</p>
-                <div className='flex justify-center md:justify-start items-center'>
-                    <button className='btn btn-primary bg-blue-600 text-white hover:bg-white hover:text-blue-600 text-sm py-4 px-7 '>Explore Now</button>
-                </div>
+        <section className=" px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          
+          <div className="w-full xl:w-2/5 mb-10 lg:mb-0  lg:pr-12">
+            <h1 className="text-3xl md:text-5xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              Find Your Dream Job With JobTrack
+            </h1>
+            <p className="text-lg text-gray-600 mb-8">
+              Simplify your job search journey with our intelligent tracking
+              system. Organize applications, schedule interviews, and land your
+              perfect role faster.
+            </p>
+            <div className="flex flex-wrap gap-2 lg:gap-4">
+              <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 !rounded-button whitespace-nowrap cursor-pointer font-medium text-base transition-all duration-200 shadow-md hover:shadow-lg">
+                Get Started
+              </button>
+              <button className="bg-white border border-indigo-600 text-indigo-600 px-6 py-3 !rounded-button whitespace-nowrap cursor-pointer font-medium text-base transition-all duration-200 hover:bg-indigo-50">
+                Learn More
+              </button>
             </div>
+          </div>
 
-            <div className="  md:mr-12 " >
-                <img
-                    className="w-52 h-52 md:w-[500px] md:h-[500px]  object-cover  border-2 border-blue-300 pt-4 rounded-full shadow-xl shadow-blue-300 "
-                    src={BannerImg}
-                    alt="Banner"
-                />
-            </div>
+         
+          <div className="w-full  xl:w-2/5 overflow-hidden rounded-xl shadow-xl">
+            <img
+              src={BannerImg}
+              alt="Job tracking platform interface"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
         </div>
+      </section>
     );
 };
 

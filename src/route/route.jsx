@@ -14,8 +14,10 @@ import {
   import CompanyDetails from "../Pages/CompanyDetails";
   import Companies from "../Pages/Companies";
   import FAQ from "../Pages/FAQ";
-  import PrivateRoute from "../assets/PrivateRout/PrivateRoute";
+  
 import Loading from "../components/Loading/Loading";
+import PrivateRoute from "../PrivateRout/PrivateRoute";
+import ProfileUpdate from "../Pages/ProfileUpdate";
   
   export const router = createBrowserRouter([
     {
@@ -55,6 +57,10 @@ import Loading from "../components/Loading/Loading";
         {
           path: '/profile',
           element: <Profile />,
+        },
+        {
+          path:'/profileUpdate',
+          Component:ProfileUpdate,
         },
         {
           path: '/faq',

@@ -13,7 +13,7 @@ const Company = ({ data }) => {
             </h2>
             <p>Discover opportunities from leading companies across various industries.</p>
         </div>
-            <div className='w-10/12 mx-auto grid grid-cols-2 md:grid-cols-4 gap-10 p-4'>
+            <div className='w-10/12 mx-auto grid grid-cols-2  xl:grid-cols-4 gap-10 p-4'>
                 {data.map((singleData) => (
                    <CompanyCard key={singleData.id} singleData={singleData} />
                    

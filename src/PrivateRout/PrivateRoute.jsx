@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { valueContext } from '../../RootLayout/RootLayout';
+import { valueContext } from '../RootLayout/RootLayout';
 import { Navigate, useLocation } from 'react-router';
-import Loading from '../../components/Loading/Loading';
+import Loading from '../components/Loading/Loading';
 
 const PrivateRoute = ({children}) => {
     const {user,loading}=useContext(valueContext);
