@@ -18,11 +18,13 @@ import {
 import Loading from "../components/Loading/Loading";
 import PrivateRoute from "../PrivateRout/PrivateRoute";
 import ProfileUpdate from "../Pages/ProfileUpdate";
+import ErrorPage from "../Pages/ErrorPage";
   
   export const router = createBrowserRouter([
     {
       path: "/",
       element: <RootLayout />,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
           index: true,
