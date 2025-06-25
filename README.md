@@ -33,7 +33,7 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 
 ## 📦 Dependencies
 ```
-```json
+
 {
   "@tailwindcss/vite": "^4.1.7",
   "date-fns": "^4.1.0",
@@ -51,16 +51,18 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 
 ### 📦 Installation Steps:
 ```
-```bash
-# 1. প্রোজেক্ট ক্লোন করুন
+# 1. Clone the repository:
 git clone https://github.com/your-username/your-project-name.git
-
-# 2. প্রোজেক্ট ফোল্ডারে যান
+```
+```
+# 2. Go to the project directory:
 cd your-project-name
-
-# 3. ডিপেন্ডেন্সি ইনস্টল করুন
+```
+```
+# 3. Install dependencies :
 npm install
-
-# 4. অ্যাপ রান করুন
+```
+```
+# 4. Install dependencies
 npm run dev
 ```
