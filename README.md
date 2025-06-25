@@ -6,7 +6,7 @@ Job Track web app
 
 https://job-track-dbb6a.web.app/
 
-## Purpose:
+## Project Overview:
 
 JobTrack is designed to connect job seekers with employers in a simple, user-friendly interface. It aims to streamline the job search and hiring process by offering tools for posting, searching, and managing job applications.
 
@@ -49,24 +49,24 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 }
 ```
 
-### 📦 Run Locally:
+## 📦 Run Locally:
 
-# 1. Clone the repository:
+### 1. Clone the repository:
 ```
 git clone https://github.com/your-username/your-project-name.git
 ```
 
-# 2. Go to the project directory:
+### 2. Go to the project directory:
 ```
 cd your-project-name
 ```
 
-# 3. Install dependencies :
+### 3. Install dependencies :
 ```
 npm install
 ```
 
-# 4. Install dependencies
+### 4. Install dependencies
 ```
 npm run dev
 ```
