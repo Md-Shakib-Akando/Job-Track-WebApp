@@ -46,7 +46,7 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
   "sweetalert2": "^11.21.2",
   "swiper": "^11.2.6",
   "tailwindcss": "^4.1.7"
-}
+}```
 
 
 ### 📦 Installation Steps:
