@@ -32,7 +32,7 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 - **Gsap Motion**
 
 ## 📦 Dependencies
-
+```
 ```json
 {
   "@tailwindcss/vite": "^4.1.7",
@@ -47,10 +47,10 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
   "swiper": "^11.2.6",
   "tailwindcss": "^4.1.7"
 }
-
+```
 
 ### 📦 Installation Steps:
-
+```
 ```bash
 # 1. প্রোজেক্ট ক্লোন করুন
 git clone https://github.com/your-username/your-project-name.git
@@ -63,3 +63,4 @@ npm install
 
 # 4. অ্যাপ রান করুন
 npm run dev
+```
