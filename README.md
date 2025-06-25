@@ -49,6 +49,8 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 }
 
 
+### 📦 Installation Steps:
+
 ```bash
 # 1. প্রোজেক্ট ক্লোন করুন
 git clone https://github.com/your-username/your-project-name.git
