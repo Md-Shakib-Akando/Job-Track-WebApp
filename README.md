@@ -20,7 +20,7 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 - Data management with React state and hooks
 - Company-wise job filtering and display
 
-## 📦 NPM Packages Used
+## 📦 Technology Used
 
 - **React**
 - **React Router**
@@ -31,5 +31,21 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 - **React toastify**
 - **Gsap Motion**
 
+## 📦 Dependencies
+
+```json
+{
+  "@tailwindcss/vite": "^4.1.7",
+  "date-fns": "^4.1.0",
+  "firebase": "^11.7.3",
+  "react": "^19.1.0",
+  "react-dom": "^19.1.0",
+  "react-icons": "^5.5.0",
+  "react-router": "^7.6.0",
+  "react-tooltip": "^5.28.1",
+  "sweetalert2": "^11.21.2",
+  "swiper": "^11.2.6",
+  "tailwindcss": "^4.1.7"
+}
 
 
