@@ -49,20 +49,24 @@ JobTrack is designed to connect job seekers with employers in a simple, user-fri
 }
 ```
 
-### 📦 Installation Steps:
-```
+### 📦 Run Locally:
+
 # 1. Clone the repository:
+```
 git clone https://github.com/your-username/your-project-name.git
 ```
-```
+
 # 2. Go to the project directory:
+```
 cd your-project-name
 ```
-```
+
 # 3. Install dependencies :
+```
 npm install
 ```
-```
+
 # 4. Install dependencies
+```
 npm run dev
 ```
