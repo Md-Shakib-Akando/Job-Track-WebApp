@@ -1,8 +1,7 @@
 ## Project Name:
 Job Track web app
 
-![Job Track Screenshot]([images/screenshot1.png](https://i.ibb.co.com/j9B6hvcH/Screenshot-2025-08-08-152121.png)
-
+![Job Track Screenshot](https://i.ibb.co/j9B6hvcH/Screenshot-2025-08-08-152121.png)
 
 ## 🔗 Live URL:
 
